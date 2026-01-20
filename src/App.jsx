@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <div className="app">
-      hello
+      hello!
       <img src="./vite.svg" alt="vite" />
       </div>
     </>
