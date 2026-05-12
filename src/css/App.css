@@ -52,7 +52,9 @@ body {
     left: 0.5rem;
 }
 
-.title {
+/* general */
+
+.boldText {
     font-family: assistant-bold;
 }
 
@@ -88,6 +90,27 @@ body {
 
 .nextBtnDisable:hover {
     transform: scale(1);
+}
+
+.textBtn {
+    padding: 0.6rem 8rem;
+    font-family: "assistant-bold";
+    font-size: 1.2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    color: #FFFFFF;
+    text-align: center;
+    background-color: #000000;
+    transition: all .2s linear;
+    border: none;
+    text-transform: none;
+    margin-top: -1.5rem;
+    z-index: 2;
+}
+
+.textBtnDisabled {
+    background-color: #9593AD;
+    cursor: auto;
 }
 
 @font-face {

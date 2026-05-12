@@ -1,0 +1,133 @@
+/* WhatIsPrat1 */
+
+.text-WhatIsPrat1 {
+    font-size: 1.4rem;
+    text-align: right;
+    width: 40rem;
+    position: relative;
+    top: 8rem;
+    left: 5rem;
+}
+
+.title-WhatIsPrat1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.textBtn-WhatIsPrat1 {
+    position: relative;
+    top: 13rem;
+}
+
+.whyPrat {
+    display: flex;
+    position: relative;
+    top: 15rem;
+}
+
+.whyprat-img {
+    width: 18rem;
+    margin: 0 -2.5rem;
+    animation: appearAnimation 1.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.whyprat-img2 {
+    position: relative;
+    bottom: 3.5rem;
+}
+
+@keyframes appearAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.9);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translateY(-5px) scale(1.02);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* PrinciplesPrat1 */
+
+.PrinciplesPrat1-content {
+    width: 48rem;
+    height: 33rem;
+    margin: auto;
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    /* חשוב */
+}
+
+.cardsPrinciplesPrat1-wrapper {
+    margin: 1rem 0rem;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.cardPrinciplesPrat1 {
+    width: 12rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    overflow: hidden;
+    white-space: pre-line;
+}
+
+.cardPrinciplesPrat1-content {
+    padding: 0.3rem;
+    text-align: center;
+}
+
+.cardPrinciplesPrat1-img {
+    height: 4rem;
+    margin-bottom: 0rem;
+    border-radius: 6px;
+}
+
+.cardPrinciplesPrat1-text {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    font-size: 1.2rem;
+    color: black;
+}
+
+.lightText .cardPrinciplesPrat1-text {
+    color: #DAE6F3;
+}
+
+.cardPrinciplesPrat1.active .cardPrinciplesPrat1-text {
+    max-height: 25rem;
+    opacity: 1;
+    margin-top: 0.5rem;
+}
+
+.PrinciplesPrat1-note {
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+@media (max-width: 1500px) {
+    .PrinciplesPrat1-content {
+        width: 50rem;
+        height: 35rem;
+    }
+}

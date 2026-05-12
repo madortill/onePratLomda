@@ -1,11 +1,11 @@
 import React from 'react'
 import { useState } from "react";
-import "../css/Start.css";
-import StartPage from './StartPage';
-import Intro from './Intro';
+import "../css/Principles.css";
+import WhatIsPrat1 from './WhatIsPrat1';
+import PrinciplesPrat1 from './PrinciplesPrat1';
 
-function Start({changeSection, startingPage}) {
-    const [page, setPage] = useState(startingPage);
+function Principles({changeSection, startingPage}) {
+    const [page, setPage] = useState(0);
     const [startPage, setStartPage] = useState(0);
     const pagesMap = {
       0: 0,
@@ -23,11 +23,11 @@ function Start({changeSection, startingPage}) {
     if (changeSection) changeSection(section, returnToLast);
   };
   return (
-    <div className='Start'>
-      {page === 0 && <StartPage changePage={handleChangePage}/>}
-      {page === 1 && <Intro changePage={handleChangePage} changeSection={handleChangeSection}/>}
+    <div className='Principles'>
+     {page === 0 && <WhatIsPrat1 changePage={handleChangePage} changeSection={handleChangeSection}/>}
+    {page === 1 && <PrinciplesPrat1 changePage={handleChangePage} changeSection={handleChangeSection}/>}
     </div>
   )
 }
 
-export default Start
+export default Principles

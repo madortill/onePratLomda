@@ -5,7 +5,9 @@ import "./css/App.css";
 import til from "./assets/images/til.svg";
 import bahad11 from "./assets/images/bahad11.png";
 import Start from "./components/Start";
+import NavBar from "./components/NavBar";
 import MobileWarningOverlay from "./components/MobileWarningOverlay";
+import Principles from "./components/Principles";
 
 function App() {
   const [section, setSection] = useState(0);
@@ -38,7 +40,7 @@ function App() {
   };
   return (
     <>
-    <MobileWarningOverlay />
+      <MobileWarningOverlay />
       <div className="app">
         <img src={bahad11} alt="bahad6" className="bahad6" />
         <img src={til} alt="til" className="til" />
@@ -46,6 +48,14 @@ function App() {
           <Start
             changeSection={handleChangeSection}
             startingPage={sectionStartPages[0] ?? 0}
+          />
+        )}
+        {section === 1 && <Principles  changeSection={handleChangeSection}
+            startingPage={sectionStartPages[1] ?? 0} />}
+        {section > 0 && (
+          <NavBar
+            currentSection={section}
+            changeSection={handleChangeSection}
           />
         )}
       </div>
