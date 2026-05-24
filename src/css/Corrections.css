@@ -1,0 +1,95 @@
+/* FillDigital */
+
+.FillDigital-Content {
+    width: 48rem;
+    height: 33rem;
+    margin: auto;
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+}
+
+.FillDigital-title {
+    font-family: "assistant-bold";
+    font-size: 2rem;
+}
+
+.FillDigital-text {
+    text-align: right;
+    max-width: 25rem;
+    font-size: 1.5rem;
+}
+
+.FillDigital-text div {
+    margin-top: 2rem;
+}
+
+.FillDigital-img {
+    position: relative;
+    bottom: 18rem;
+    right: 12rem;
+    width: 15rem;
+}
+
+.FillDigital-info-btn {
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+    background-color: #000000;
+    color: #fff;
+    font-family: "assistant-bold";
+    font-size: 2rem;
+    line-height: 3.2rem;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 3px 0 #8d8e8f;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+}
+
+.FillDigital-info-pop {
+    background-color: #000000;
+    border-radius: 12px;
+    padding: 2rem;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    z-index: 3;
+    color: #fff;
+    font-size: 1.5rem;
+    width: 30rem;
+}
+
+.FillDigital-info-pop .close-btn {
+    position: absolute;
+    top: 0.3rem;
+    right: 0.7rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: "fredoka";
+}
+
+
+.FillDigital-info-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 0 #8f8e8d;
+}
+
+.FillDigital-info-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 0 #8f8e8d;
+}

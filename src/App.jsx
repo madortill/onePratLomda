@@ -8,6 +8,7 @@ import Start from "./components/Start";
 import NavBar from "./components/NavBar";
 import MobileWarningOverlay from "./components/MobileWarningOverlay";
 import Principles from "./components/Principles";
+import Corrections from "./components/Corrections";
 
 function App() {
   const [section, setSection] = useState(0);
@@ -15,7 +16,7 @@ function App() {
   const [navSection, setNavSection] = useState(0);
   const SECTION_RETURN_PAGE_MAP = {
     0: 1,
-    1: 2,
+    1: 1,
     2: 6,
     3: 3,
     4: 1,
@@ -50,8 +51,18 @@ function App() {
             startingPage={sectionStartPages[0] ?? 0}
           />
         )}
-        {section === 1 && <Principles  changeSection={handleChangeSection}
-            startingPage={sectionStartPages[1] ?? 0} />}
+        {section === 1 && (
+          <Principles
+            changeSection={handleChangeSection}
+            startingPage={sectionStartPages[1] ?? 0}
+          />
+        )}
+        {section === 2 && (
+          <Corrections
+            changeSection={handleChangeSection}
+            startingPage={sectionStartPages[2] ?? 0}
+          />
+        )}
         {section > 0 && (
           <NavBar
             currentSection={section}
