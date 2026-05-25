@@ -11,7 +11,7 @@ import Principles from "./components/Principles";
 import Corrections from "./components/Corrections";
 
 function App() {
-  const [section, setSection] = useState(0);
+  const [section, setSection] = useState(2);
   const [sectionStartPages, setSectionStartPages] = useState({});
   const [navSection, setNavSection] = useState(0);
   const SECTION_RETURN_PAGE_MAP = {

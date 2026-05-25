@@ -1,0 +1,46 @@
+.typewriter-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    direction: rtl;
+}
+
+.typewriter-line {
+    width: 0;
+    max-width: fit-content;
+    margin: 0;
+
+    overflow: hidden;
+    white-space: nowrap;
+
+    color: black;
+    font-size: 1.35rem;
+    line-height: 1.35;
+    text-align: right;
+
+    border-left: 3px solid transparent;
+
+    animation:
+        typeWrite var(--duration) var(--delay) steps(35) forwards,
+        blinkCursor 400ms var(--delay) steps(1) 6;
+}
+
+@keyframes typeWrite {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: var(--width);
+    }
+}
+
+@keyframes blinkCursor {
+    from {
+        border-left-color: transparent;
+    }
+
+    to {
+        border-left-color: black;
+    }
+}

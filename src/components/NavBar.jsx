@@ -6,7 +6,7 @@ function NavBar({ currentSection, changeSection }) {
 
     const topics = [
         "עקרונות",
-        "הגנה ותיקון",
+        "הזנה ותיקון",
         "הכנות מיוחדות",
         "סגירת הדו״ח",
         "הנחיות במלחמה",

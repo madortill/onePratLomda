@@ -23,13 +23,13 @@ function Intro({ changePage, changeSection }) {
       />
       <img src={nextBtn} alt="nextBtn" className="nextBtn" onClick={nextPage} />
       <div className="ktzina-bubble ktzina-bubble-intro">
-      <div className="bubble bubble-intro">
-        <p className="boldText">ברוכים הבאים ללומדת דו"ח 1!</p>
-        <p>
-          במהלך הלומדה תכירו את עקרונות <br /> השימוש בדו"ח 1 ופקודותיו
-        </p>
-      </div>
-      <img src={ktzina} alt="ktzina" className="ktzina-intro" />
+        <div className="bubble bubble-intro">
+          <p className="boldText">ברוכים הבאים ללומדת דו"ח 1!</p>
+          <p>
+            במהלך הלומדה תכירו את עקרונות <br /> השימוש בדו"ח 1 ופקודותיו
+          </p>
+        </div>
+        <img src={ktzina} alt="ktzina" className="ktzina-intro" />
       </div>
     </div>
   );

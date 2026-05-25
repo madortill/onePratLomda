@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+
 /* FillDigital */
 
 .FillDigital-Content {
@@ -92,4 +94,394 @@
 .FillDigital-info-btn:active {
     transform: translateY(0);
     box-shadow: 0 2px 0 #8f8e8d;
+}
+
+/* Prat1Journey */
+
+
+.Prat1Journey-title {
+    font-family: "assistant-bold";
+    font-size: 2.2rem;
+    position: relative;
+    top: 7rem;
+}
+
+.Prat1Journey-text {
+    font-size: 1.3rem;
+    position: relative;
+    top: 7rem;
+}
+
+.Prat1Journey-img {
+    height: 20rem;
+}
+
+.Prat1Journey-img-container {
+    position: relative;
+    top: 9rem;
+    display: flex;
+    gap: 2rem;
+}
+
+.textBtn-Prat1Journey {
+    position: relative;
+    top: 11rem;
+    padding: 0.5rem 4rem;
+}
+
+@media (max-width: 960px) {
+    .Prat1Journey-img-container2 {
+        gap: 0rem;
+    }
+
+    .Prat1Journey-img-container2 .Prat1Journey-img {
+        height: 18rem;
+    }
+}
+
+@media (max-width: 705px) {
+    .Prat1Journey-img-container2 .Prat1Journey-img {
+        height: 16rem;
+    }
+}
+
+@media (max-width: 950px) {
+    .Prat1Journey-img-container {
+        top: 12rem;
+    }
+
+    .textBtn-Prat1Journey {
+        top: 14rem;
+    }
+
+    .Prat1Journey-title {
+        top: 10rem;
+    }
+
+    .Prat1Journey-text {
+        top: 10rem;
+    }
+}
+
+/* JourneyCircles */
+
+.progress-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    direction: rtl;
+    margin-top: 1rem;
+    position: relative;
+    top: 11rem;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+}
+
+.circle {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.3rem;
+    line-height: 1.1;
+    z-index: 2;
+}
+
+.circle.active {
+    background: black;
+    color: white;
+}
+
+.line {
+    width: 8rem;
+    height: 0.1rem;
+    background: #777;
+}
+
+.line.active {
+    background: black;
+}
+
+@media (max-width: 950px) {
+    .progress-wrapper {
+        top: 14rem;
+    }
+}
+
+/* PopupJourney */
+
+.PopupJourney {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    direction: rtl;
+    z-index: 1000;
+}
+
+.popup-journey {
+    position: relative;
+    width: 32.25rem;
+    min-height: 23rem;
+    background: #dceaf7;
+    border-radius: 0.35rem;
+    padding: 3.25rem 1.7rem 1.2rem;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.PopupJourneyCloseButton {
+    position: absolute;
+    top: 0rem;
+    right: 0.7rem;
+    border: none;
+    background: transparent;
+    font-size: 3rem;
+    line-height: 1;
+    font-weight: 600;
+    cursor: pointer;
+    color: #000;
+    font-family: "fredoka";
+}
+
+.PopupJourneyGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem 1.35rem;
+    align-items: center;
+}
+
+.PopupJourney-topicCard {
+    position: relative;
+    min-height: 2.15rem;
+    background: #fff;
+    border-radius: 0.25rem;
+    padding: 0.35rem 2.15rem 0.35rem 0.75rem;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    font-weight: 700;
+    color: #000;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.PopupJourney-topicCard:hover {
+    transform: scale(1.055);
+    box-shadow: 0 0.35rem 0.75rem rgba(0, 0, 0, 0.14);
+    z-index: 3;
+}
+
+.PopupJourney-topicTitle {
+    font-size: 0.95rem;
+    line-height: 1.15;
+}
+
+.PopupJourney-topicDescription {
+    margin: 0.15rem 0 0;
+    font-size: 0.55rem;
+    line-height: 1.25;
+    font-weight: 600;
+}
+
+
+.PopupJourney-redX {
+    position: absolute;
+    right: -0.2rem;
+    top: 50%;
+    transform: translateY(-50%) rotate(-8deg);
+    color: #d60000;
+    font-size: 2.7rem;
+    font-weight: 600;
+    line-height: 1;
+    font-family: "Permanent Marker", cursive;
+}
+
+.PopupJourneyText {
+    margin: 1.65rem auto 0;
+    max-width: 28rem;
+    font-size: 1.05rem;
+    line-height: 1.45;
+    font-weight: 500;
+    color: #000;
+}
+
+/* Retro */
+
+.Retro-content {
+    font-size: 1.5rem;
+    position: relative;
+    top: 8rem;
+    line-height: 1.3;
+}
+
+.retroImg {
+    height: 12rem;
+    margin-bottom: 1rem;
+}
+
+.retro-title {
+    font-family: "assistant-bold";
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 950px) {
+    .Retro-content {
+        top: 11rem;
+    }
+
+}
+
+
+/* Prat1Changes */
+
+.Prat1Changes {
+    font-size: 1.5rem;
+}
+
+.Prat1Changes-text {
+    position: relative;
+    top: 8rem;
+}
+
+.Prat1Changes-note {
+    position: relative;
+    top: 10rem;
+    width: 45rem;
+    background-color: #ffff;
+    padding: 0.7rem;
+    border-radius: 0.1rem;
+}
+
+.bubble-Prat1Changes {
+    font-size: 1.5rem;
+    padding: 1rem 2.5rem 2rem 0.5rem;
+    max-width: 17rem;
+}
+
+.ktzina-Prat1Changes {
+    width: 10rem;
+}
+
+.changes-text-title {
+    font-family: "assistant-bold";
+    text-decoration: underline;
+    margin-bottom: 1rem;
+}
+
+.changes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 1rem;
+}
+
+.changes-item {
+    font-family: "assistant-bold";
+    background-color: #DAE6F3;
+    width: 9rem;
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.changes-item:nth-child(2),
+.changes-item:nth-child(3) {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+.changes-item:hover {
+    transform: scale(1.055);
+    box-shadow: 0 0.35rem 0.75rem rgba(0, 0, 0, 0.14);
+    z-index: 3;
+}
+
+.Prat1Changes-mainContent {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    position: relative;
+    top: 9rem;
+}
+
+@media (max-width: 950px) {
+    .Prat1Changes-mainContent {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+        position: relative;
+        top: 12rem;
+    }
+
+    .Prat1Changes-text {
+        position: relative;
+        top: 11rem;
+    }
+
+    .Prat1Changes-note {
+        top: 13rem;
+    }
+}
+
+/* FixPrat1 */
+
+.FixPrat1-cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.35rem;
+    position: relative;
+    top: 10rem;
+}
+
+.note-FixPrat1 {
+    position: relative;
+    top: 12rem;
+}
+
+@media (max-width: 950px) {
+    .FixPrat1-cards {
+        top: 13rem;
+    }
+
+    .note-FixPrat1 {
+        top: 15rem;
+    }
+}
+
+
+/* FixPractice */
+
+.FixPractice-text {
+    background-color: #fff;
+    width: 25rem;
+    padding: 2rem;
+    border-radius: 0.2rem;
+}
+
+.ItayStory {
+    width: 20rem;
+}
+
+.FixPractice-story {
+    position: relative;
+    top: 10rem;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
 }
