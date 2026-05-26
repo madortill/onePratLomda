@@ -5,18 +5,41 @@ import "../css/Corrections.css";
 import nextBtn from "../assets/images/nextBtn.svg";
 import backBtn from "../assets/images/backBtn.svg";
 import story from "../assets/images/ItayStory.png";
+import notes from "../assets/images/ItayNotes.svg";
+import ktzina from "../assets/images/ktzina.png";
+
 import TypewriterText from "./TypewriterText";
+import ItayScreenSvg from "./ItayScreenSvg";
 
 function FixPractice({ changePage, startPage }) {
-    const [finishStory, setFinishStory] = useState(false);
+  const [page, setPage] = useState(startPage);
+  const [finishStory, setFinishStory] = useState(true);
+  const [finishedPractice, setFinishedPractice] = useState(false);
+  const [isPopOpen, setIsPopOpen] = useState(false);
   const previousPage = () => {
-    changePage(4);
+    if (page === 0) {
+      changePage(4);
+    } else {
+      setPage((prev) => prev - 1);
+    }
   };
   const nextPage = () => {
-    changePage(6);
+    if (page === 1) {
+      changePage(6);
+    } else {
+      setPage((prev) => prev + 1);
+    }
   };
+  const canGoNext =
+    startPage !== 0
+      ? true
+      : page === 0
+      ? finishStory
+      : page === 1
+      ? finishedPractice
+      : true;
   const textLines = [
-    "ביום ראשון 26/04/26, ",
+    "ביום רביעי 06/05/26, ",
     "רב”ט איתי רוזנבליט המשרת בבה”ד 11 ",
     " היה בבית בחופשה שנתית אך שכח לעדכן",
     " בדו”ח 1 וסימן שהוא נמצא ביחידה.",
@@ -35,17 +58,62 @@ function FixPractice({ changePage, startPage }) {
         className="backBtn"
         onClick={previousPage}
       />
-      <img src={nextBtn} alt="nextBtn" className={`nextBtn ${finishStory ? "" : "nextBtnDisable"}`}  onClick={finishStory ? nextPage : undefined} />
+      <img
+        src={nextBtn}
+        alt="nextBtn"
+        className={`nextBtn ${canGoNext ? "" : "nextBtnDisable"}`}
+        onClick={canGoNext ? nextPage : undefined}
+      />
       <p className="title">תיקון הדו”ח</p>
-      <div className="FixPractice-story">
-        <div className="FixPractice-text">
-          <TypewriterText
-            lines={textLines}
-            onComplete={() => setFinishStory(true)}
-          />
+      {page > 0 && (
+        <p className="FixPractice-note">
+          תקן את הדו”ח והוסף הסבר או תחקיר חתום בהתאם למקרה של איתי
+        </p>
+      )}
+      {page == 0 && (
+        <div className="FixPractice-story">
+          <div className="FixPractice-text">
+            <TypewriterText
+              lines={textLines}
+              onComplete={() => setFinishStory(true)}
+            />
+          </div>
+          <img src={story} alt="story" className="ItayStory" />
         </div>
-        <img src={story} alt="story" className="ItayStory" />
-      </div>
+      )}
+      {page === 1 && (
+        <div className="Itay-notes">
+          <button
+            className={`textBtn textBtn-FixPractice`}
+            onClick={() => {
+              setIsPopOpen((prev) => !prev);
+            }}
+          >
+            {" "}
+            {isPopOpen ? "סגירת התזכורת" : "תזכורת לפרטים"}
+          </button>
+          {isPopOpen && page === 1 && (
+            <img src={notes} alt="notes" className="Itay-notes-img" />
+          )}
+        </div>
+      )}
+      {page === 1 && (
+        <ItayScreenSvg
+          className="ItayScreenSvg"
+          setFinishedPractice={setFinishedPractice}
+        />
+      )}
+      {finishedPractice && page === 1 && (
+        <div className="ktzina-bubble ktzina-bubble-FixPractice">
+          <div className="bubble bubble-FixPractice">
+            <p className="boldText">כל הכבוד!</p>
+            <p>
+              אם השינוי נעשה אחרי פחות מ-10 ימים אז יש לכתוב הסבר ב"הערת משתמש"
+            </p>
+          </div>
+          <img src={ktzina} alt="ktzina" className="ktzina-FixPractice" />
+        </div>
+      )}
     </div>
   );
 }

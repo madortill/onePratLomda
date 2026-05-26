@@ -9,16 +9,17 @@ import NavBar from "./components/NavBar";
 import MobileWarningOverlay from "./components/MobileWarningOverlay";
 import Principles from "./components/Principles";
 import Corrections from "./components/Corrections";
+import DifferentInput from "./components/DifferentInput";
 
 function App() {
-  const [section, setSection] = useState(2);
+  const [section, setSection] = useState(3);
   const [sectionStartPages, setSectionStartPages] = useState({});
   const [navSection, setNavSection] = useState(0);
   const SECTION_RETURN_PAGE_MAP = {
     0: 1,
     1: 1,
     2: 6,
-    3: 3,
+    3: 1,
     4: 1,
   };
   const handleChangeSection = (targetSection, returnToLast = false) => {
@@ -63,12 +64,15 @@ function App() {
             startingPage={sectionStartPages[2] ?? 0}
           />
         )}
+        {section === 3 && <DifferentInput  changeSection={handleChangeSection}
+            startingPage={sectionStartPages[3] ?? 0}/>}
         {section > 0 && (
           <NavBar
             currentSection={section}
             changeSection={handleChangeSection}
           />
         )}
+
       </div>
     </>
   );
