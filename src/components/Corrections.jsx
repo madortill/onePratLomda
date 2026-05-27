@@ -8,7 +8,7 @@ import Retro from "./Retro";
 import Prat1Changes from "./Prat1Changes";
 import FixPrat1 from "./FixPrat1";
 import FixPractice from "./FixPractice";
-import CorrectionsEnd from "./CorrectionsEnd";
+import CorrectionsEnd from "./CorrectionsPrat1";
 
 function Corrections({ changeSection, startingPage }) {
   const [page, setPage] = useState(startingPage);

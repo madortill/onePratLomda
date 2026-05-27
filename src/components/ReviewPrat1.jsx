@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from "react";
-import "../css/ClosePrat1.css";
+import "../css/Closing.css";
 
 import nextBtn from "../assets/images/nextBtn.svg";
 import backBtn from "../assets/images/backBtn.svg";

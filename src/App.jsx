@@ -10,10 +10,11 @@ import MobileWarningOverlay from "./components/MobileWarningOverlay";
 import Principles from "./components/Principles";
 import Corrections from "./components/Corrections";
 import DifferentInput from "./components/DifferentInput";
-import ClosePrat1 from "./components/ClosePrat1";
+import Closing from "./components/Closing";
+import War from "./components/War";
 
 function App() {
-  const [section, setSection] = useState(0);
+  const [section, setSection] = useState(4);
   const [sectionStartPages, setSectionStartPages] = useState({});
   const [navSection, setNavSection] = useState(0);
   const SECTION_RETURN_PAGE_MAP = {
@@ -22,6 +23,7 @@ function App() {
     2: 6,
     3: 1,
     4: 1,
+    5: 5
   };
   const handleChangeSection = (targetSection, returnToLast = false) => {
     // חזרה לתפריט הראשי
@@ -65,17 +67,30 @@ function App() {
             startingPage={sectionStartPages[2] ?? 0}
           />
         )}
-        {section === 3 && <DifferentInput  changeSection={handleChangeSection}
-            startingPage={sectionStartPages[3] ?? 0}/>}
-          {section === 4 && <ClosePrat1 changeSection={handleChangeSection}
-            startingPage={sectionStartPages[4] ?? 0}/>}
+        {section === 3 && (
+          <DifferentInput
+            changeSection={handleChangeSection}
+            startingPage={sectionStartPages[3] ?? 0}
+          />
+        )}
+        {section === 4 && (
+          <Closing
+            changeSection={handleChangeSection}
+            startingPage={sectionStartPages[4] ?? 0}
+          />
+        )}
+        {section === 5 && (
+          <War
+            changeSection={handleChangeSection}
+            startingPage={sectionStartPages[5] ?? 0}
+          />
+        )}
         {section > 0 && (
           <NavBar
             currentSection={section}
             changeSection={handleChangeSection}
           />
         )}
-
       </div>
     </>
   );

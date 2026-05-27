@@ -1,0 +1,129 @@
+
+
+
+/* תיבה לבנה */
+.whiteInfoBox {
+    width: 88%;
+    max-width: 58rem;
+    margin: 0 auto 2.4rem;
+    margin-top: 10rem;
+    box-sizing: border-box;
+    padding: 1.4rem 2.2rem;
+    background-color: #fff;
+    border-radius: 0.15rem;
+    text-align: right;
+}
+
+/* תיבה שחורה */
+.blackInfoBox {
+    width: 88%;
+    max-width: 58rem;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 1.25rem 2rem;
+    background-color: #000;
+    border-radius: 0.15rem;
+    text-align: right;
+}
+
+/* שורות טקסט */
+.whiteInfoBox p,
+.blackInfoBox p {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.35rem;
+    margin: 0.55rem 0;
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+/* צבע טקסט לפי תיבה */
+.whiteInfoBox p {
+    color: #111;
+}
+
+.blackInfoBox p {
+    color: #fff;
+}
+
+/* הדגשה של המשפט השני בתיבה הלבנה */
+.whiteInfoBox p:nth-child(2) {
+    font-weight: 700;
+}
+
+/* אייקון חרבות */
+.sentenceIcon {
+    width: 2.5rem;
+    height: 2.5rem;
+    flex: 0 0 2.5rem;
+    object-fit: contain;
+}
+
+/* אייקון שעון */
+.timeIcon {
+    width: 3rem;
+    height: 3rem;
+    flex: 0 0 3rem;
+    object-fit: contain;
+}
+
+/* כפתורי מעבר */
+.backBtn,
+.nextBtn {
+    position: absolute;
+    bottom: 1.1rem;
+    width: 4.8rem;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.backBtn:hover,
+.nextBtn:hover {
+    transform: scale(1.05);
+}
+
+/* לפי התמונה: חזור בצד ימין, הבא בצד שמאל */
+.backBtn {
+    right: 1.25rem;
+}
+
+.nextBtn {
+    left: 1.25rem;
+}
+
+/* התאמה למסכים קטנים */
+@media (max-width: 950px) {
+    .whiteInfoBox,
+    .blackInfoBox {
+        width: 95%;
+        padding: 1rem 1.1rem;
+    }
+    .whiteInfoBox {
+        margin-top: 14rem;
+    }
+
+    .whiteInfoBox p,
+    .blackInfoBox p {
+        font-size: 0.95rem;
+        align-items: flex-start;
+    }
+
+    .sentenceIcon {
+        width: 1.5rem;
+        height: 1.5rem;
+        flex-basis: 1.5rem;
+    }
+
+    .timeIcon {
+        width: 2rem;
+        height: 2rem;
+        flex-basis: 2rem;
+    }
+
+    .backBtn,
+    .nextBtn {
+        width: 4rem;
+    }
+}

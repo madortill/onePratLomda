@@ -1,6 +1,6 @@
-/* ClosePrat1End */
+/* ClosePrat1 */
 
-.ClosePrat1End-content {
+.ClosePrat1-content {
     display: flex;
     align-items: center;
     margin-top: 10rem;
@@ -11,14 +11,14 @@
     position: relative;
 }
 
-.bubble-ClosePrat1End0 {
+.bubble-ClosePrat10 {
     font-size: 1.3rem;
     padding: 1.5rem 3rem 2.5rem 1rem;
     max-width: 15rem;
     margin-bottom: -4rem;
     margin-right: 4.8rem;
 }
-.bubble-ClosePrat1End1 {
+.bubble-ClosePrat11 {
     font-size: 1.3rem;
     padding: 2.5rem 4rem 3.5rem 2rem;
     max-width: 20rem;
@@ -26,7 +26,7 @@
     margin-right: 4.8rem;
 }
 
-.ktzina-ClosePrat1End {
+.ktzina-ClosePrat1 {
     width: 8rem;
 }
 
@@ -54,6 +54,11 @@
     transition: transform 0.25s ease;
 }
 
+.closePrat1Btn-disabled {
+    animation: none;
+    transform: scale(1);
+}
+
 .closePrat1Btn:hover {
     animation: none;
     transform: scale(1.13);
@@ -77,7 +82,7 @@
     .closePrat1Img {
         width: 35rem;
     }
-    .ClosePrat1End-content {
+    .ClosePrat1-content {
         margin-top: 13rem;
     }
 }
@@ -85,7 +90,7 @@
     .closePrat1Img {
         width: 30rem;
     }
-    .ClosePrat1End-content {
+    .ClosePrat1-content {
         margin-top: 14rem;
         gap: 0.5rem;
     }
