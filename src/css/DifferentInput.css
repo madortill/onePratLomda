@@ -79,6 +79,11 @@
     font-family: "fredoka";
     line-height: 1;
     cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.SpecialInput-close-btn:hover {
+    transform: scale(1.15);
 }
 
 .SpecialInput-popup-img {
@@ -119,4 +124,263 @@
 .boldText-SpecialInput {
     text-decoration: underline;
     font-size: 1.35rem;
+}
+
+
+/* ManualInput */
+
+.ManualInput-content {
+    display: flex;
+    align-items: center;
+    margin-top: 8rem;
+}
+
+.textBtn-ManualInput {
+    padding: 0.5rem;
+    width: 16rem;
+    margin-top: 1rem;
+}
+
+.bubble-ManualInput {
+    font-size: 1.5rem;
+    padding: 2rem 4rem 3rem 2rem;
+    max-width: 17rem;
+}
+
+.ktzina-ManualInput {
+    width: 10rem;
+}
+
+.kzina-btn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ManualInput-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30rem;
+    transform: translate(-50%, -50%);
+    background-color: #DAE6F3;
+    z-index: 30;
+    padding: 2.125rem 1.75rem 1.75rem;
+    border-radius: 0.25rem;
+    box-sizing: border-box;
+    text-align: center;
+    overflow-y: auto;
+}
+
+.ManualInput-close-btn {
+    position: absolute;
+    top: 0.2rem;
+    right: 1rem;
+    border: none;
+    background: transparent;
+    font-size: 3rem;
+    font-family: "fredoka";
+    line-height: 1;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.ManualInput-close-btn:hover {
+    transform: scale(1.15);
+}
+
+.ManualInput-popup-title {
+    margin: 0 0 0.5rem;
+    font-size: 1.8rem;
+    font-family: "assistant-bold";
+}
+
+.ManualInput-popup-text {
+    font-size: 1.4rem;
+    line-height: 1.5;
+}
+
+/* האזור שבתוכו העיגולים יושבים */
+.manual-input-circles-wrapper {
+    position: relative;
+    width: 40rem;
+    /* 700px */
+    max-width: 38rem;
+    height: 28rem;
+    min-height: 22.5rem;
+    /* 360px */
+    margin-top: 2rem;
+}
+
+/* בסיס לכל העיגולים */
+.manual-input-circle {
+    position: absolute;
+    top: var(--circle-top);
+    right: var(--circle-right);
+
+    width: var(--circle-size);
+    height: var(--circle-size);
+    min-width: var(--circle-size);
+    min-height: var(--circle-size);
+    max-width: var(--circle-size);
+    max-height: var(--circle-size);
+
+    border: none;
+    border-radius: 50%;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1.1rem;
+    text-align: center;
+    font-family: inherit;
+    line-height: 1.18;
+
+    cursor: pointer;
+    user-select: none;
+
+    opacity: 0;
+    transform: translateY(2.2rem) scale(0.8);
+    animation: manualInputCircleEnter 0.65s cubic-bezier(0.2, 0.85, 0.35, 1.25) forwards;
+    animation-delay: var(--circle-delay);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        filter 0.25s ease;
+}
+
+/* מעבר עכבר */
+.manual-input-circle:hover {
+    transform: translateY(-0.6rem) scale(1.08) rotate(-1deg);
+    box-shadow: 0 1.125rem 1.875rem rgb(0 0 0 / 0.18);
+    filter: brightness(1.04);
+    z-index: 5;
+}
+
+.manual-input-circle:active {
+    transform: translateY(-0.25rem) scale(1.03);
+}
+
+/* טקסטים */
+.manual-input-circle__title {
+    font-family: "assistant-bold";
+    font-size: 1.2rem;
+    line-height: 1.15;
+}
+
+.manual-input-circle__text {
+    margin-top: 0.35rem;
+    font-weight: 500;
+    font-size: 0.85rem;
+    line-height: 1.2;
+}
+
+/* צבעים */
+.manual-input-circle--black {
+    background-color: #000;
+    color: #fff;
+}
+
+.manual-input-circle--white {
+    background-color: #fff;
+    color: #000;
+}
+
+.manual-input-circle--blue {
+    background-color: #dcebf6;
+    color: #000;
+}
+
+/* גדלים - רק rem */
+.manual-input-circle--small {
+    --circle-size: 8rem;
+}
+
+.manual-input-circle--medium {
+    --circle-size: 9.5rem;
+}
+
+.manual-input-circle--large {
+    --circle-size: 11rem;
+}
+
+.manual-input-circle--xlarge {
+    --circle-size: 13rem;
+}
+
+/* אנימציית כניסה */
+@keyframes manualInputCircleEnter {
+    0% {
+        opacity: 0;
+        transform: translateY(2.2rem) scale(0.8);
+    }
+
+    70% {
+        opacity: 1;
+        transform: translateY(-0.3rem) scale(1.04);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* התאמה למסכים קטנים */
+@media (max-width: 950px) {
+    .ManualInput-content {
+        margin-top: 14rem;
+    }
+
+    .manual-input-circles-wrapper {
+        width: 28rem;
+        height: auto;
+        min-height: unset;
+        margin: 2.5rem auto 0;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .manual-input-circle {
+        position: static;
+
+        width: var(--circle-size);
+        height: var(--circle-size);
+        min-width: var(--circle-size);
+        min-height: var(--circle-size);
+        max-width: var(--circle-size);
+        max-height: var(--circle-size);
+    }
+
+    .manual-input-circle--small {
+        --circle-size: 6.25rem;
+    }
+
+    .manual-input-circle--medium {
+        --circle-size: 7.5rem;
+    }
+
+    .manual-input-circle--large {
+        --circle-size: 8.75rem;
+    }
+
+    .manual-input-circle--xlarge {
+        --circle-size: 10rem;
+    }
+
+    .manual-input-circle__title {
+        font-size: 0.9rem;
+    }
+
+    .manual-input-circle__text {
+        font-size: 0.68rem;
+    }
 }

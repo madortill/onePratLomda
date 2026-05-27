@@ -1,12 +1,12 @@
 import React from "react";
 import { useState } from "react";
-import "../css/DifferentInput.css";
+import "../css/ClosePrat1.css";
 
-import SpecialInput from "./SpecialInput";
-import ManualInput from "./ManualInput";
+import ClosePrat1End from "./ClosePrat1End";
+import ReviewPrat1 from "./ReviewPrat1";
 
-function DifferentInput({ changeSection, startingPage }) {
-  const [page, setPage] = useState(startingPage);
+function ClosePrat1({ changeSection, startingPage }) {
+  const [page, setPage] = useState(0);
   const [startPage, setStartPage] = useState(0);
   const pagesMap = {
     0: 1,
@@ -24,22 +24,22 @@ function DifferentInput({ changeSection, startingPage }) {
     if (changeSection) changeSection(section, returnToLast);
   };
   return (
-    <div className="DifferentInput">
+    <div className="ClosePrat1">
       {page === 0 && (
-        <SpecialInput
+        <ReviewPrat1
           changePage={handleChangePage}
           changeSection={handleChangeSection}
-          startPage={startPage}
         />
       )}
       {page === 1 && (
-        <ManualInput
+        <ClosePrat1End
           changePage={handleChangePage}
           changeSection={handleChangeSection}
+          startPage={startPage}
         />
       )}
     </div>
   );
 }
 
-export default DifferentInput;
+export default ClosePrat1;

@@ -10,9 +10,10 @@ import MobileWarningOverlay from "./components/MobileWarningOverlay";
 import Principles from "./components/Principles";
 import Corrections from "./components/Corrections";
 import DifferentInput from "./components/DifferentInput";
+import ClosePrat1 from "./components/ClosePrat1";
 
 function App() {
-  const [section, setSection] = useState(3);
+  const [section, setSection] = useState(4);
   const [sectionStartPages, setSectionStartPages] = useState({});
   const [navSection, setNavSection] = useState(0);
   const SECTION_RETURN_PAGE_MAP = {
@@ -24,7 +25,7 @@ function App() {
   };
   const handleChangeSection = (targetSection, returnToLast = false) => {
     // חזרה לתפריט הראשי
-    if (targetSection === 6) {
+    if (targetSection === 7) {
       setSection(0);
       return;
     }
@@ -66,6 +67,8 @@ function App() {
         )}
         {section === 3 && <DifferentInput  changeSection={handleChangeSection}
             startingPage={sectionStartPages[3] ?? 0}/>}
+          {section === 4 && <ClosePrat1 changeSection={handleChangeSection}
+            startingPage={sectionStartPages[4] ?? 0}/>}
         {section > 0 && (
           <NavBar
             currentSection={section}

@@ -69,7 +69,7 @@ function SpecialInput({ changePage, changeSection, startPage }) {
   const [activeItem, setActiveItem] = useState(null);
   const [visitedItems, setVisitedItems] = useState([]);
 
-  const canContinue = visitedItems.length === items.length;
+  const canContinue = (startPage !== 0) || (visitedItems.length === items.length);
 
   const handleItemClick = (index) => {
     setActiveItem(index);

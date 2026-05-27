@@ -21,12 +21,14 @@ function About() {
         {showAbout && (
           <>
             <h3 className="list-text-about">מפתחת ראשית:</h3>
-            <p className="list-text-about">רב"ט גילי נחום</p>
+            <p className="list-text-about">סמל גילי נחום</p>
             <h3 className="list-text-about">גרפיקה:</h3>
-            <p className="list-text-about">רב"ט גילי נחום</p>
+            <p className="list-text-about">סמל גילי נחום</p>
             <h3 className="list-text-about">מומחי תוכן:</h3>
+            <p className="list-text-about">רחל</p>
+            <p className="list-text-about">מתן</p>
             <h3 className="list-text-about">רמ"ד טי"ל:</h3>
-            <p className="list-text-about">רס"מ עדן בן חמו</p>
+            <p className="list-text-about">סמ"ר קטיה מדבדב</p>
             <h3 className="list-text-about">גרסה:</h3>
             <p className="list-text-about">יוני 2026</p>
           </>
