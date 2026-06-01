@@ -14,7 +14,7 @@ import Closing from "./components/Closing";
 import War from "./components/War";
 
 function App() {
-  const [section, setSection] = useState(4);
+  const [section, setSection] = useState(5);
   const [sectionStartPages, setSectionStartPages] = useState({});
   const [navSection, setNavSection] = useState(0);
   const SECTION_RETURN_PAGE_MAP = {
