@@ -12,18 +12,20 @@ import Corrections from "./components/Corrections";
 import DifferentInput from "./components/DifferentInput";
 import Closing from "./components/Closing";
 import War from "./components/War";
+import Summary from "./components/Summary";
 
 function App() {
-  const [section, setSection] = useState(5);
+  const [section, setSection] = useState(0);
   const [sectionStartPages, setSectionStartPages] = useState({});
   const [navSection, setNavSection] = useState(0);
+  const [fullName, setFullName] = useState("");
   const SECTION_RETURN_PAGE_MAP = {
     0: 1,
     1: 1,
     2: 6,
     3: 1,
     4: 1,
-    5: 5
+    5: 5,
   };
   const handleChangeSection = (targetSection, returnToLast = false) => {
     // חזרה לתפריט הראשי
@@ -51,6 +53,7 @@ function App() {
         <img src={til} alt="til" className="til" />
         {section === 0 && (
           <Start
+            setFullName={setFullName}
             changeSection={handleChangeSection}
             startingPage={sectionStartPages[0] ?? 0}
           />
@@ -85,6 +88,7 @@ function App() {
             startingPage={sectionStartPages[5] ?? 0}
           />
         )}
+        {section === 6 && <Summary changeSection={handleChangeSection} fullName={fullName} />}
         {section > 0 && (
           <NavBar
             currentSection={section}

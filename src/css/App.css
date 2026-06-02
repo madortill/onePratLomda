@@ -12,7 +12,7 @@ body {
     justify-content: center;
     text-align: center;
     overflow: hidden;
-    Font-size: calc(10px + 0.5vw);
+    Font-size: calc(1.1vh + 0.5vw);
 }
 
 * {

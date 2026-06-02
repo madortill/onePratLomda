@@ -1,10 +1,13 @@
 import React from "react";
 import { useState } from "react";
 import "../css/War.css";
+
 import HaravotBarzel from "./HaravotBarzel";
 import Disconnected from "./Disconnected";
 import DisconnectedPractice from "./DisconnectedPractice";
 import ControlHR from "./ControlHR";
+import Nahsal from "./Nahsal";
+import Tnufa from "./Tnufa";
 
 function War({ changeSection, startingPage }) {
   const [page, setPage] = useState(startingPage);
@@ -34,9 +37,18 @@ function War({ changeSection, startingPage }) {
           changeSection={handleChangeSection}
         />
       )}
-      {page === 1 && <Disconnected changePage={handleChangePage}/>}
-      {page === 2 && <DisconnectedPractice changePage={handleChangePage}  startPage={startPage}/>}
-      {page === 3 && <ControlHR changePage={handleChangePage}  startPage={startPage}/>}
+      {page === 1 && <Disconnected changePage={handleChangePage} />}
+      {page === 2 && (
+        <DisconnectedPractice
+          changePage={handleChangePage}
+          startPage={startPage}
+        />
+      )}
+      {page === 3 && (
+        <ControlHR changePage={handleChangePage} startPage={startPage} />
+      )}
+      {page === 4 && <Nahsal changePage={handleChangePage} />}
+      {page === 5 && <Tnufa changePage={handleChangePage}  changeSection={handleChangeSection} />}
     </div>
   );
 }

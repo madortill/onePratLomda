@@ -6,11 +6,13 @@ import About from './About';
 import prat1Logo from "../assets/images/pratOneLogo.svg";
 import openingGraphic from "../assets/images/openingGraphic.svg";
 
-function StartPage({changePage}) {
+function StartPage({changePage, setFullName}) {
     const [canContinue, setCanContinue] = useState(false);
     const checkHebrewName = (value) => {
 
         const hebrewRegex = /^[\u0590-\u05FF]+(?:\s+[\u0590-\u05FF]+)+$/;
+
+        setFullName(value);
     
         if (hebrewRegex.test(value.trim())) {
             setCanContinue(true);

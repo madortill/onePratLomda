@@ -9,7 +9,7 @@ import weekendGuy from "../assets/images/weekend-guy.png";
 import weekendKtzina from "../assets/images/weekend-ktzina.png";
 
 function ControlHR({ changePage, startPage }) {
-  const [page, setPage] = useState(0);
+  const [page, setPage] = useState(startPage);
   const previousPage = () => {
     if (page === 0) {
       changePage(2, true);

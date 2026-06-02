@@ -1,0 +1,68 @@
+.mcq {
+    width: 40rem;
+    max-width: 100%;
+    background-color: #000;
+    padding: 1rem;
+    direction: rtl;
+    box-sizing: border-box;
+    margin-top: 12rem;
+    border-radius: 7px;
+}
+
+.mcq__question {
+    color: #fff;
+    font-size: 1.7rem;
+    font-family: "assistant-bold";
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.mcq__answers {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.mcq__answers--four {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.mcq__answers--six {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.mcq__answer {
+    min-height: 4rem;
+    padding: 0.75rem;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    cursor: pointer;
+    box-sizing: border-box;
+    font-family: inherit;
+    border-radius: 3px;
+}
+
+.mcq__answer:hover {
+    background-color: #e7e4e4;
+}
+
+.mcq__answer--wrong {
+    background-color: #d93025;
+    color: #fff;
+}
+
+.mcq__answer--wrong:hover {
+    background-color: #d93025;
+}
+
+.mcq__answer--correct {
+    background-color: #2e7d32;
+    color: #fff;
+}
+
+.mcq__answer--correct:hover {
+    background-color: #2e7d32;
+}

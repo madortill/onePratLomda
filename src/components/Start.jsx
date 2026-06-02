@@ -4,7 +4,7 @@ import "../css/Start.css";
 import StartPage from './StartPage';
 import Intro from './Intro';
 
-function Start({changeSection, startingPage}) {
+function Start({changeSection, startingPage, setFullName}) {
     const [page, setPage] = useState(startingPage);
     const [startPage, setStartPage] = useState(0);
     const pagesMap = {
@@ -24,7 +24,7 @@ function Start({changeSection, startingPage}) {
   };
   return (
     <div className='Start'>
-      {page === 0 && <StartPage changePage={handleChangePage}/>}
+      {page === 0 && <StartPage changePage={handleChangePage} setFullName={setFullName}/>}
       {page === 1 && <Intro changePage={handleChangePage} changeSection={handleChangeSection}/>}
     </div>
   )
