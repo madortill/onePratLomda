@@ -3,7 +3,7 @@ import "../css/War.css";
 
 import nextBtn from "../assets/images/nextBtn.svg";
 import backBtn from "../assets/images/backBtn.svg";
-import story from "../assets/images/almogstory.png";
+import story from "../assets/images/almogStory.png";
 import notes from "../assets/images/AlmogNotes.svg";
 import ktzina from "../assets/images/ktzina.png";
 
