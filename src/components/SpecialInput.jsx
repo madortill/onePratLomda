@@ -69,7 +69,7 @@ function SpecialInput({ changePage, changeSection, startPage }) {
   const [activeItem, setActiveItem] = useState(null);
   const [visitedItems, setVisitedItems] = useState([]);
 
-  const canContinue = (startPage !== 0) || (visitedItems.length === items.length);
+  const canContinue = startPage !== 0 || visitedItems.length === items.length;
 
   const handleItemClick = (index) => {
     setActiveItem(index);
@@ -102,7 +102,7 @@ function SpecialInput({ changePage, changeSection, startPage }) {
       />
 
       <h1 className="title">הזנות מיוחדות</h1>
-
+      <p className="SpecialInput-note"> - לחצו על הנושאים כדי ללמוד עליהם -</p>
       <div
         className={`SpecialInput-items ${activeItem !== null ? "dimmed" : ""}`}
       >

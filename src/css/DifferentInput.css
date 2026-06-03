@@ -1,11 +1,16 @@
 /* SpecialInput */
 
+.SpecialInput-note {
+margin-top: 13rem;
+font-size: 1.1rem;
+}
+
 .SpecialInput-items {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     gap: 5rem;
-    margin-top: 14rem;
+    margin-top: 1.5rem;
 }
 
 .SpecialInput-items.dimmed {

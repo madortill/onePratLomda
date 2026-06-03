@@ -30,6 +30,7 @@ function StartPage({changePage, setFullName}) {
       <div className='StartPage-Content'>
         <img src={prat1Logo} alt="prat1Logo" className='prat1Logo-startPage' />
         <p className='startTitle'>לומדת דו"ח 1</p>
+        <p className='startNote'> - הכניסו שם מלא -</p>
         <div className='loginBox'>
             <input type="text" placeholder='שם מלא' className='nameInput' onChange={(e) => checkHebrewName(e.target.value)} />
         </div>

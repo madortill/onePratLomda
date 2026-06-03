@@ -106,11 +106,32 @@ body {
     text-transform: none;
     margin-top: -1.5rem;
     z-index: 2;
+    animation: pulseText 1.5s ease infinite;
+}
+
+.textBtn:hover {
+    animation: none;
+    transform: scale(1.055);
+}
+
+@keyframes pulseText {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 .textBtnDisabled {
     background-color: #9593AD;
     cursor: auto;
+    animation: none;
 }
 
 .blur-background {
@@ -127,12 +148,12 @@ body {
     font-family: "assistant-bold";
     font-size: 2.2rem;
     position: relative;
-    top: 7rem;
+    top: 8rem;
 }
 
 @media (max-width: 950px) {
     .title {
-        top: 9rem;
+        top: 10rem;
     }
 }
 

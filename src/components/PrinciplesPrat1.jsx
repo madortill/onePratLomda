@@ -59,7 +59,7 @@ function PrinciplesPrat1({ changePage, changeSection }) {
             </div>
           ))}
         </div>
-          <p className="PrinciplesPrat1-note">לחץ על הכרטיסיות</p>
+          <p className="PrinciplesPrat1-note"> - לחצו על הכרטיסיות -</p>
       </div>
     </div>
   )

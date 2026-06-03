@@ -80,7 +80,7 @@ function ManualInput({ changePage, changeSection }) {
         className={`nextBtn ${canContinue ? "" : "nextBtnDisable"}`}
         onClick={canContinue ? nextPage : undefined}
       />
-      <h1 className="title">הזנות מיוחדות</h1>
+      <h1 className="title">נוהל עבודה ידני</h1>
       <div className="ManualInput-content">
         <div className="kzina-btn-container">
           <div className="ktzina-bubble ktzina-bubble-ManualInput">

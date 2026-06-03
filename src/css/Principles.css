@@ -121,8 +121,8 @@
     position: absolute;
     right: 50%;
     transform: translateX(50%);
-    bottom: 1rem;
-    font-size: 1.3rem;
+    bottom: 0.2rem;
+    font-size: 1.1rem;
 }
 
 @media (max-width: 1500px) {

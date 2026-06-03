@@ -46,7 +46,7 @@ function FillDigital({ changePage, changeSection }) {
         </div>
         <img src={phone} alt="phone" className="FillDigital-img" />
         <button
-          className="FillDigital-info-btn"
+          className={`FillDigital-info-btn ${canContinue ? "FillDigital-info-btn-disabled" : ""}`}
           onClick={() => {
             setIsOpen((prev) => !prev);
             setCanContinue(true);

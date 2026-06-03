@@ -55,6 +55,7 @@
     position: absolute;
     bottom: 0.5rem;
     right: 0.5rem;
+    animation: pulse 1.5s ease infinite;
 }
 
 .FillDigital-info-pop {
@@ -89,11 +90,17 @@
 .FillDigital-info-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 0 #8f8e8d;
+    animation: none;
+    transform: scale(1.15);
 }
 
 .FillDigital-info-btn:active {
     transform: translateY(0);
     box-shadow: 0 2px 0 #8f8e8d;
+}
+
+.FillDigital-info-btn-disabled {
+    animation: none;
 }
 
 /* Prat1Journey */
@@ -488,7 +495,7 @@
 
 .FixPractice-note {
     position: relative;
-    top: 7.5rem;
+    top: 8rem;
     font-size: 1.4rem;
 }
 
@@ -508,6 +515,7 @@
 .textBtn-FixPractice {
     padding: 0.5rem;
     width: 16rem;
+    animation: none;
 }
 
 .bubble-FixPractice {
@@ -548,7 +556,7 @@
     }
     
     .FixPractice-note {
-        top: 10.5rem;
+        top: 11rem;
     }
     .Itay-notes {
         top: 19.3rem;

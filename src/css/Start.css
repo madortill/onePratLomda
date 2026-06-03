@@ -94,12 +94,16 @@
     font-family: "assistant-bold";
 }
 
+.startNote {
+    margin-top: 1rem;
+}
+
 .loginBox {
     max-width: 500px;
     width: 100%;
     position: relative;
     padding: 3rem 2rem 6rem 2rem;
-    margin-top: 2rem;
+    margin-top: 0.5rem;
     border-radius: 5px;
     background: #fff;
     box-shadow: 0 14px 43px 0 rgba(178, 155, 6, .41);
@@ -149,7 +153,7 @@ input::placeholder {
     margin-top: 3rem;
     width: 35rem;
     position: relative;
-    top: 4rem
+    top: 3rem
 }
 
 .StartBtnDisabled {
