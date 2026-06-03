@@ -157,7 +157,7 @@
 
 .phone-end {
     position: relative;
-    bottom: 12rem;
+    bottom: 13rem;
 }
 
 .phone-name {
@@ -179,4 +179,10 @@
 
 .restartBtn:hover {
     transform: scale(1.15);
+}
+
+@media (max-width: 950px) {
+    .phone-end {
+        bottom: 10rem;
+    }
 }
