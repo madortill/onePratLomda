@@ -25,8 +25,8 @@ function About() {
             <h3 className="list-text-about">גרפיקה:</h3>
             <p className="list-text-about">סמל גילי נחום</p>
             <h3 className="list-text-about">מומחי תוכן:</h3>
-            <p className="list-text-about">רחל</p>
-            <p className="list-text-about">מתן</p>
+            <p className="list-text-about">סגן רחל טירוורק</p>
+            <p className="list-text-about">סמ"ר מתן סיון קמחי</p>
             <h3 className="list-text-about">רמ"ד טי"ל:</h3>
             <p className="list-text-about">סמ"ר קטיה מדבדב</p>
             <h3 className="list-text-about">גרסה:</h3>
