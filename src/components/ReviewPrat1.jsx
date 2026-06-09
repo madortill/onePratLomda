@@ -4,10 +4,17 @@ import "../css/Closing.css";
 import nextBtn from "../assets/images/nextBtn.svg";
 import backBtn from "../assets/images/backBtn.svg";
 
-function ReviewPrat1({ changePage, changeSection }) {
+// קומפוננטות שייפתחו בלחיצה על העיגולים
+import SystemWarning from "./SystemWarning";
+// import NoMatch from "./NoMatch";
+import ReportGaps from "./ReportGaps";
+import NoMatch from "./NoMatch";
+
+function ReviewPrat1({ changePage, changeSection, startPage }) {
   const [openedCircle, setOpenedCircle] = useState(null);
   const [visitedCircles, setVisitedCircles] = useState([]);
-  const [allCirclesVisited, setAllCirclesVisited] = useState(false);
+
+  const allCirclesVisited = startPage !== 0 || visitedCircles.length === 3;
 
   const previousPage = () => {
     changeSection(3, true);
@@ -17,67 +24,63 @@ function ReviewPrat1({ changePage, changeSection }) {
     changePage(1);
   };
 
-  const handleCircleClick = (circleName) => {
-    setOpenedCircle(circleName);
-  
+  const markCircleAsVisited = (circleName) => {
     setVisitedCircles((prev) => {
-      if (prev.includes(circleName)) {
-        return prev;
-      }
-  
-      const updatedVisitedCircles = [...prev, circleName];
-  
-      if (updatedVisitedCircles.length === 3) {
-        setAllCirclesVisited(true);
-      }
-  
-      return updatedVisitedCircles;
+      if (prev.includes(circleName)) return prev;
+      return [...prev, circleName];
     });
   };
 
-  const closePopup = () => {
+  const handleCircleClick = (circleName) => {
+    setOpenedCircle(circleName);
+  };
+
+  const finishOpenedComponent = () => {
+    if (openedCircle) {
+      markCircleAsVisited(openedCircle);
+    }
+  
+    setOpenedCircle(null);
+  };
+  
+  const backFromOpenedComponent = () => {
     setOpenedCircle(null);
   };
 
   const renderOpenedComponent = () => {
     switch (openedCircle) {
-      case "noStatement":
+      case "NoMatch":
         return (
-          <div className="reviewPopup">
-            <button className="closePopupBtn" onClick={closePopup}>
-              ×
-            </button>
-            <h2>אי התאמה</h2>
-            <p>כלל החיילים אשר הדיווחים עבורם אינם תואמים להמלצת המערכת.</p>
-          </div>
+          <NoMatch
+            onFinish={finishOpenedComponent}
+            onBack={backFromOpenedComponent}
+          />
         );
-
+  
       case "notes":
         return (
-          <div className="reviewPopup">
-            <button className="closePopupBtn" onClick={closePopup}>
-              ×
-            </button>
-            <h2>הערות</h2>
-            <p>דיווחי אזהרה וחסימת הנתונים על ידי המערכת.</p>
-          </div>
+          <SystemWarning
+            onFinish={finishOpenedComponent}
+            onBack={backFromOpenedComponent}
+          />
         );
-
+  
       case "reportGaps":
         return (
-          <div className="reviewPopup">
-            <button className="closePopupBtn" onClick={closePopup}>
-              ×
-            </button>
-            <h2>פערי דיווח</h2>
-            <p>חיילים אשר לא דווח עליהם שום סטטוס.</p>
-          </div>
+          <ReportGaps
+            onFinish={finishOpenedComponent}
+            onBack={backFromOpenedComponent}
+          />
         );
-
+  
       default:
         return null;
     }
   };
+
+  if (openedCircle) {
+    return renderOpenedComponent();
+  }
 
   return (
     <div className="ReviewPrat1">
@@ -88,27 +91,33 @@ function ReviewPrat1({ changePage, changeSection }) {
         onClick={previousPage}
       />
 
-      <img src={nextBtn} alt="nextBtn" className={`nextBtn ${allCirclesVisited ? "" : "nextBtnDisable"}`}
-  onClick={allCirclesVisited ? nextPage : undefined} />
+      <img
+        src={nextBtn}
+        alt="nextBtn"
+        className={`nextBtn ${allCirclesVisited ? "" : "nextBtnDisable"}`}
+        onClick={allCirclesVisited ? nextPage : undefined}
+      />
 
       <h1 className="title">אופן בקרת הדו”ח</h1>
+
       <div className="ReviewPrat1-content">
-        <p className="reviewSubtitle boldText">
+        <p className="reviewSubtitle">
           קיימות 3 דרכים לבצע בקרה על נכונות ואמינות הדו”ח:
         </p>
 
         <div className="circlesContainer">
           <button
-            className={`reviewCircle circleNoStatement ${
-              visitedCircles.includes("noStatement") ? "visitedNoStatement" : ""
+            className={`reviewCircle circleNoMatch ${
+              visitedCircles.includes("NoMatch") ? "visitedNoMatch" : ""
             }`}
-            onClick={() => handleCircleClick("noStatement")}
+            onClick={() => handleCircleClick("NoMatch")}
           >
             <span className="circleTitle">אי התאמה:</span>
             <span>
               כלל החיילים אשר הדיווחים עבורם אינם תואמים להמלצת המערכת
             </span>
           </button>
+
           <button
             className={`reviewCircle circleNotes ${
               visitedCircles.includes("notes") ? "visitedNotes" : ""
@@ -133,10 +142,6 @@ function ReviewPrat1({ changePage, changeSection }) {
         <p className="reviewInstruction">
           - לחצו על כל אחד מאופני הבקרה כדי ללמוד עליו -
         </p>
-
-        {openedCircle && (
-          <div className="popupOverlay">{renderOpenedComponent()}</div>
-        )}
       </div>
     </div>
   );

@@ -15,10 +15,11 @@ import War from "./components/War";
 import Summary from "./components/Summary";
 
 function App() {
-  const [section, setSection] = useState(0);
+  const [section, setSection] = useState(4);
   const [sectionStartPages, setSectionStartPages] = useState({});
-  const [navSection, setNavSection] = useState(0);
+  const [maxReachedSection, setMaxReachedSection] = useState(section);
   const [fullName, setFullName] = useState("");
+
   const SECTION_RETURN_PAGE_MAP = {
     0: 1,
     1: 1,
@@ -27,6 +28,7 @@ function App() {
     4: 1,
     5: 5,
   };
+
   const handleChangeSection = (targetSection, returnToLast = false) => {
     // חזרה לתפריט הראשי
     if (targetSection === 7) {
@@ -43,14 +45,18 @@ function App() {
         : 0,
     }));
 
-    setNavSection((prev) => (targetSection > prev ? targetSection : prev));
+    setMaxReachedSection((prev) =>
+      targetSection > prev ? targetSection : prev
+    );
   };
+
   return (
     <>
       <MobileWarningOverlay />
       <div className="app">
         <img src={bahad11} alt="bahad6" className="bahad6" />
         <img src={til} alt="til" className="til" />
+
         {section === 0 && (
           <Start
             setFullName={setFullName}
@@ -58,40 +64,53 @@ function App() {
             startingPage={sectionStartPages[0] ?? 0}
           />
         )}
+
         {section === 1 && (
           <Principles
             changeSection={handleChangeSection}
             startingPage={sectionStartPages[1] ?? 0}
           />
         )}
+
         {section === 2 && (
           <Corrections
             changeSection={handleChangeSection}
             startingPage={sectionStartPages[2] ?? 0}
           />
         )}
+
         {section === 3 && (
           <DifferentInput
             changeSection={handleChangeSection}
             startingPage={sectionStartPages[3] ?? 0}
           />
         )}
+
         {section === 4 && (
           <Closing
             changeSection={handleChangeSection}
             startingPage={sectionStartPages[4] ?? 0}
           />
         )}
+
         {section === 5 && (
           <War
             changeSection={handleChangeSection}
             startingPage={sectionStartPages[5] ?? 0}
           />
         )}
-        {section === 6 && <Summary changeSection={handleChangeSection} fullName={fullName} />}
+
+        {section === 6 && (
+          <Summary
+            changeSection={handleChangeSection}
+            fullName={fullName}
+          />
+        )}
+
         {section > 0 && (
           <NavBar
             currentSection={section}
+            maxReachedSection={maxReachedSection}
             changeSection={handleChangeSection}
           />
         )}

@@ -9,7 +9,7 @@ function Closing({ changeSection, startingPage }) {
   const [page, setPage] = useState(startingPage);
   const [startPage, setStartPage] = useState(0);
   const pagesMap = {
-    0: 0,
+    0: 1,
     1: 1,
   };
   const handleChangePage = (targetPage, returnToLast = false) => {
@@ -29,6 +29,7 @@ function Closing({ changeSection, startingPage }) {
         <ReviewPrat1
           changePage={handleChangePage}
           changeSection={handleChangeSection}
+          startPage={startPage}
         />
       )}
       {page === 1 && (

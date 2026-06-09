@@ -1,3 +1,141 @@
+
+/* ReviewPrat1 */
+
+/* ReviewPrat1 */
+
+.ReviewPrat1 {
+    width: 100vw;
+    height: 100vh;
+    direction: rtl;
+    position: relative;
+    overflow: hidden;
+}
+
+.ReviewPrat1-content {
+    margin-top: 8rem;
+}
+
+.reviewInstruction {
+    margin-top: 2rem;
+    font-size: 1rem;
+}
+
+
+/* כפתור חזרה זמני אם אין לך backBtn בתוך הקומפוננטה */
+.backBtnText {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    border: none;
+    background: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.6rem;
+    font-family: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.backBtnText:hover {
+    font-weight: bold;
+}
+
+@media (max-width: 950px) {
+    .ReviewPrat1-content {
+        margin-top: 11rem;
+    }
+}
+
+/* systemWarning */
+
+
+.systemWarning-tabs {
+    position: absolute;
+    top: 1.2rem;
+    right: 50%;
+    transform: translateX(50%);
+    display: flex;
+    background-color: white;
+    border: 0.1rem solid black;
+    border-radius: 0.3rem;
+    overflow: hidden;
+}
+
+.systemWarning-tab {
+    background-color: white;
+    border: none;
+    border-left: 0.1rem solid #d8d8d8;
+    padding: 0.45rem 1rem;
+    font-family: inherit;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.systemWarning-tab-active {
+    background-color: #ffe15a;
+    font-weight: bold;
+}
+
+.systemWarning-card {
+    width: 30rem;
+    min-height: 15rem;
+    background-color: white;
+    margin: 10rem auto 0;
+    position: relative;
+    text-align: center;
+    padding: 1.7rem 1rem 1.2rem;
+    border-radius: 10px;
+}
+
+.systemWarning-card-title {
+    font-size: 1.7rem;
+    margin-bottom: 1.6rem;
+}
+
+.systemWarning-icon {
+    width: 4rem;
+    position: absolute;
+    top: 1rem;
+}
+
+.systemWarning-icon-right {
+    right: 1rem;
+}
+
+.systemWarning-icon-left {
+    left: 1rem;
+}
+
+.systemWarning-img {
+    width: 20rem;
+    max-height: 12rem;
+    object-fit: contain;
+    margin-bottom: 0;
+}
+
+.systemWarning-text {
+    font-size: 1.3rem;
+    line-height: 1.4;
+    margin: 1rem auto;
+    width: 85%;
+}
+
+.systemWarning-practiceBtn {
+    margin-top: 1rem;
+    padding: 0.6rem 7rem;
+}
+
+.systemWarning-question {
+    width: fit-content;
+    margin: 2rem auto 0;
+}
+
+@media (max-width: 950px) {
+    .systemWarning-card {
+        margin: 14rem auto 0;
+    }
+}
+
+
 /* ClosePrat1 */
 
 .ClosePrat1-content {
@@ -151,7 +289,7 @@
     color: #111;
 }
 
-.circleNoStatement {
+.circleNoMatch {
     top: 0;
     left: 3rem;
     background-color: rgba(0, 0, 0, 0.80);
@@ -170,7 +308,7 @@
     color: #111;
 }
 
-.visitedNoStatement {
+.visitedNoMatch {
     background-color: rgba(156, 157, 159, 0.80);
     color: #ffffff;
 }
@@ -178,63 +316,4 @@
 .visitedReportGaps {
     background-color: rgba(198, 203, 207, 0.80);
     color: rgb(0, 0, 0);
-}
-
-/* ReviewPrat1 */
-
-.ReviewPrat1-content {
-    margin-top: 8rem;
-}
-
-.reviewInstruction {
-    margin-top: 2rem;
-    font-size: 1rem;
-}
-
-.popupOverlay {
-    position: fixed;
-    inset: 0;
-    z-index: 20;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.35);
-}
-
-.reviewPopup {
-    position: relative;
-    width: 32rem;
-    min-height: 14rem;
-    padding: 3rem 2rem 2rem;
-    border-radius: 1.2rem;
-    background-color: white;
-    color: #111;
-    box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.25);
-}
-
-.reviewPopup h2 {
-    margin: 0 0 1rem;
-    font-size: 1.7rem;
-}
-
-.reviewPopup p {
-    margin: 0;
-    font-size: 1.15rem;
-    line-height: 1.6;
-}
-
-.closePopupBtn {
-    position: absolute;
-    top: 0.7rem;
-    left: 1rem;
-    border: none;
-    background: none;
-    font-size: 2rem;
-    cursor: pointer;
-}
-
-@media (max-width: 950px) {
-    .ReviewPrat1-content {
-        margin-top: 11rem;
-    }
 }
