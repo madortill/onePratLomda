@@ -11,7 +11,7 @@ import ktzina from "../assets/images/ktzina.png";
 import TypewriterText from "./TypewriterText";
 import ItayScreenSvg from "./ItayScreenSvg";
 
-function FixPractice({ changePage, startPage }) {
+function FixPractice({ changePage, startPage, isReviewMode }) {
   const [page, setPage] = useState(startPage);
   const [finishStory, setFinishStory] = useState(true);
   const [finishedPractice, setFinishedPractice] = useState(false);
@@ -31,13 +31,15 @@ function FixPractice({ changePage, startPage }) {
     }
   };
   const canGoNext =
-    startPage !== 0
-      ? true
-      : page === 0
-      ? finishStory
-      : page === 1
-      ? finishedPractice
-      : true;
+  isReviewMode
+    ? true
+    : startPage !== 0
+    ? true
+    : page === 0
+    ? finishStory
+    : page === 1
+    ? finishedPractice
+    : true;
   const textLines = [
     "ביום רביעי 06/05/26, ",
     "רב”ט איתי רוזנבליט המשרת בבה”ד 11 ",

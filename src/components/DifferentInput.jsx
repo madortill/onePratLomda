@@ -5,7 +5,7 @@ import "../css/DifferentInput.css";
 import SpecialInput from "./SpecialInput";
 import ManualInput from "./ManualInput";
 
-function DifferentInput({ changeSection, startingPage }) {
+function DifferentInput({ changeSection, startingPage, isReviewMode }) {
   const [page, setPage] = useState(startingPage);
   const [startPage, setStartPage] = useState(0);
   const pagesMap = {
@@ -30,6 +30,7 @@ function DifferentInput({ changeSection, startingPage }) {
           changePage={handleChangePage}
           changeSection={handleChangeSection}
           startPage={startPage}
+          isReviewMode={isReviewMode}
         />
       )}
       {page === 1 && (

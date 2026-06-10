@@ -14,7 +14,8 @@ function ReviewPrat1({ changePage, changeSection, startPage }) {
   const [openedCircle, setOpenedCircle] = useState(null);
   const [visitedCircles, setVisitedCircles] = useState([]);
 
-  const allCirclesVisited = startPage !== 0 || visitedCircles.length === 3;
+  const allCirclesVisited =
+  isReviewMode || startPage !== 0 || visitedCircles.length === 3;
 
   const previousPage = () => {
     changeSection(3, true);

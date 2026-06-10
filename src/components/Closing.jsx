@@ -5,7 +5,7 @@ import "../css/Closing.css";
 import ClosePrat1 from "./ClosePrat1";
 import ReviewPrat1 from "./ReviewPrat1";
 
-function Closing({ changeSection, startingPage }) {
+function Closing({ changeSection, startingPage, isReviewMode }) {
   const [page, setPage] = useState(startingPage);
   const [startPage, setStartPage] = useState(0);
   const pagesMap = {
@@ -30,6 +30,7 @@ function Closing({ changeSection, startingPage }) {
           changePage={handleChangePage}
           changeSection={handleChangeSection}
           startPage={startPage}
+          isReviewMode={isReviewMode}
         />
       )}
       {page === 1 && (

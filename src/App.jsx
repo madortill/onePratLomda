@@ -20,6 +20,8 @@ function App() {
   const [maxReachedSection, setMaxReachedSection] = useState(section);
   const [fullName, setFullName] = useState("");
 
+  const isReviewMode = maxReachedSection > section;
+
   const SECTION_RETURN_PAGE_MAP = {
     0: 1,
     1: 1,
@@ -76,6 +78,7 @@ function App() {
           <Corrections
             changeSection={handleChangeSection}
             startingPage={sectionStartPages[2] ?? 0}
+            isReviewMode={isReviewMode}
           />
         )}
 
@@ -83,6 +86,7 @@ function App() {
           <DifferentInput
             changeSection={handleChangeSection}
             startingPage={sectionStartPages[3] ?? 0}
+            isReviewMode={isReviewMode}
           />
         )}
 
@@ -90,6 +94,7 @@ function App() {
           <Closing
             changeSection={handleChangeSection}
             startingPage={sectionStartPages[4] ?? 0}
+            isReviewMode={isReviewMode}
           />
         )}
 
@@ -97,6 +102,7 @@ function App() {
           <War
             changeSection={handleChangeSection}
             startingPage={sectionStartPages[5] ?? 0}
+            isReviewMode={isReviewMode}
           />
         )}
 

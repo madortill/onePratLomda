@@ -10,7 +10,7 @@ import ktzina from "../assets/images/ktzina.png";
 import TypewriterText from "./TypewriterText";
 import AlmogSvg from "./AlmogSvg";
 
-function DisconnectedPractice({ changePage, startPage }) {
+function DisconnectedPractice({ changePage, startPage, isReviewMode }) {
   const [page, setPage] = useState(startPage);
   const [finishStory, setFinishStory] = useState(true);
   const [finishedPractice, setFinishedPractice] = useState(false);
@@ -27,15 +27,15 @@ function DisconnectedPractice({ changePage, startPage }) {
     "נתונים מול בתי חולים ומרכזי שליטה ארציים.",
     "בתום הבדיקות המקיפות ואישור הגורמים",
     "המוסמכים, הוחלט להגדירו רשמית כנעדר",
-    "במערכות המטכ\"ליות."
+    'במערכות המטכ"ליות.',
   ];
 
   const canGoNext =
-    page === 0
-      ? finishStory
-      : page === 1
-      ? finishedPractice
-      : true;
+    isReviewMode ||
+    startPage > 0 ||
+    (page === 0 && finishStory) ||
+    (page === 1 && finishedPractice) ||
+    page > 1;
 
   const previousPage = () => {
     if (page === 0) {
@@ -116,9 +116,7 @@ function DisconnectedPractice({ changePage, startPage }) {
         <div className="ktzina-bubble ktzina-bubble-FixPractice">
           <div className="bubble bubble-FixPractice">
             <p className="boldText">כל הכבוד!</p>
-            <p>
-              יש לדווח סטטוס זה עבור משרתים שמבוצעות פעולות ליצירת קשר עימם
-            </p>
+            <p>יש לדווח סטטוס זה עבור משרתים שמבוצעות פעולות ליצירת קשר עימם</p>
           </div>
 
           <img src={ktzina} alt="ktzina" className="ktzina-FixPractice" />

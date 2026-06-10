@@ -10,7 +10,7 @@ import FixPrat1 from "./FixPrat1";
 import FixPractice from "./FixPractice";
 import CorrectionsEnd from "./CorrectionsPrat1";
 
-function Corrections({ changeSection, startingPage }) {
+function Corrections({ changeSection, startingPage,isReviewMode }) {
   const [page, setPage] = useState(startingPage);
   const [startPage, setStartPage] = useState(0);
   const pagesMap = {
@@ -40,7 +40,7 @@ function Corrections({ changeSection, startingPage }) {
       {page === 2 && <Retro changePage={handleChangePage} />}
       {page === 3 && <Prat1Changes changePage={handleChangePage}/>}
       {page === 4 && <FixPrat1 changePage={handleChangePage}/>}
-      {page === 5 && <FixPractice changePage={handleChangePage} startPage={startPage}/>}
+      {page === 5 && <FixPractice changePage={handleChangePage} startPage={startPage}  isReviewMode={isReviewMode}/>}
       {page === 6 && <CorrectionsEnd changePage={handleChangePage} changeSection={handleChangeSection}/>}
     </div>
   );

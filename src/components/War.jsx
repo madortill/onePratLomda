@@ -9,7 +9,7 @@ import ControlHR from "./ControlHR";
 import Nahsal from "./Nahsal";
 import Tnufa from "./Tnufa";
 
-function War({ changeSection, startingPage }) {
+function War({ changeSection, startingPage, isReviewMode }) {
   const [page, setPage] = useState(startingPage);
   const [startPage, setStartPage] = useState(0);
   const pagesMap = {
@@ -42,6 +42,7 @@ function War({ changeSection, startingPage }) {
         <DisconnectedPractice
           changePage={handleChangePage}
           startPage={startPage}
+          isReviewMode={isReviewMode}
         />
       )}
       {page === 3 && (

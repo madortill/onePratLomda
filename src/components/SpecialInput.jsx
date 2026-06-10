@@ -7,7 +7,7 @@ import hospital from "../assets/images/hospital-icon.svg";
 import moved from "../assets/images/moved-icon.svg";
 import outside from "../assets/images/outside-unit-icon.svg";
 
-function SpecialInput({ changePage, changeSection, startPage }) {
+function SpecialInput({ changePage, changeSection, startPage, isReviewMode }) {
   const previousPage = () => {
     changeSection(2, true);
   };
@@ -69,7 +69,8 @@ function SpecialInput({ changePage, changeSection, startPage }) {
   const [activeItem, setActiveItem] = useState(null);
   const [visitedItems, setVisitedItems] = useState([]);
 
-  const canContinue = startPage !== 0 || visitedItems.length === items.length;
+  const canContinue =
+  isReviewMode || startPage !== 0 || visitedItems.length === items.length;
 
   const handleItemClick = (index) => {
     setActiveItem(index);
