@@ -10,7 +10,7 @@ import SystemWarning from "./SystemWarning";
 import ReportGaps from "./ReportGaps";
 import NoMatch from "./NoMatch";
 
-function ReviewPrat1({ changePage, changeSection, startPage }) {
+function ReviewPrat1({ changePage, changeSection, startPage, isReviewMode }) {
   const [openedCircle, setOpenedCircle] = useState(null);
   const [visitedCircles, setVisitedCircles] = useState([]);
 
