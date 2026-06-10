@@ -15,7 +15,7 @@ import War from "./components/War";
 import Summary from "./components/Summary";
 
 function App() {
-  const [section, setSection] = useState(4);
+  const [section, setSection] = useState(0);
   const [sectionStartPages, setSectionStartPages] = useState({});
   const [maxReachedSection, setMaxReachedSection] = useState(section);
   const [fullName, setFullName] = useState("");
