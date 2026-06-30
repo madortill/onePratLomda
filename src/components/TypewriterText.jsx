@@ -3,7 +3,7 @@ import "../css/TypewriterText.css";
 
 export default function TypewriterText({
   lines,
-  delayPerLine = 2,
+  delayPerLine = 1.9,
   typingDuration = 2,
   onComplete,
 }) {
