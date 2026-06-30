@@ -4,7 +4,7 @@ import "../css/MobileWarningOverlay.css";
 function MobileWarningOverlay({
   breakpoint = 1441,
   title = "הלומדה אינה מותאמת לטלפון",
-  message = "כדי לצפות בתוכן בצורה מיטבית, מומלץ לפתוח את הלומדה ממחשב.",
+  message = "כדי לצפות בתוכן בצורה מיטבית, מומלץ לסובב את המסך או לפתוח את הלומדה ממחשב.",
   icon = "💻",
 }) {
   const [isMobile, setIsMobile] = useState(false);
