@@ -12,7 +12,7 @@ import story from "../assets/images/chenStory.png";
 
 function NoMatch({ onFinish, onBack }) {
     const [page, setPage] = useState(0);
-  const [finishStory, setFinishStory] = useState(true);
+  const [finishStory, setFinishStory] = useState(false);
   const textLines = [
     "חן התרגשה מאוד לקראת חג הנובי גוד בו ",
     " היא תוכל לצאת הביתה ולחגוג עם משפחתה.",

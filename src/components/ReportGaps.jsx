@@ -12,7 +12,7 @@ import story from "../assets/images/sapirStory.png";
 
 function ReportGaps({ onFinish, onBack }) {
   const [page, setPage] = useState(0);
-  const [finishStory, setFinishStory] = useState(true);
+  const [finishStory, setFinishStory] = useState(false);
   const textLines = [
     "השבוע העמוס של ספיר הרוש התחיל בבלבול:",
     "היא חשבה שהזינה דו״ח 1 עתידי כבר ביום ",

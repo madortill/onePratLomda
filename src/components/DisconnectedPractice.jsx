@@ -12,7 +12,7 @@ import AlmogSvg from "./AlmogSvg";
 
 function DisconnectedPractice({ changePage, startPage, isReviewMode }) {
   const [page, setPage] = useState(startPage);
-  const [finishStory, setFinishStory] = useState(true);
+  const [finishStory, setFinishStory] = useState(false);
   const [finishedPractice, setFinishedPractice] = useState(false);
   const [isPopOpen, setIsPopOpen] = useState(false);
 
