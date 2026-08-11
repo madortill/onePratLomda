@@ -3,8 +3,8 @@ import "../css/TypewriterText.css";
 
 export default function TypewriterText({
   lines,
-  delayPerLine = 1.9,
-  typingDuration = 2,
+  delayPerLine = 1.4,
+  typingDuration = 1.5,
   onComplete,
 }) {
   useEffect(() => {

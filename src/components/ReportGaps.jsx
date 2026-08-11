@@ -75,12 +75,12 @@ function ReportGaps({ onFinish, onBack }) {
           <MultipleChoiceQuestion
             question={"מה קצין המשא\"ן צריך לעשות?"}
             answers={[
-                "תשובה 1",
-                "תשובה 2",
-                "תשובה 3",
-                "תשובה 4"
+                "להזין נוכח, כנראה שהוא ביחידה",
+                "להזין חופשה שניתית - כעונש על זה שהחייל לא מילא דוח 1",
+                "לא להזין על החייל",
+                "לבדוק עם המפקד של החייל איפה הוא נמצא ולהזין בדוח"
             ]}
-            correctAnswers={["תשובה 3"]}
+            correctAnswers={["לבדוק עם המפקד של החייל איפה הוא נמצא ולהזין בדוח"]}
             onQuestionCompleted={() => {
               setTimeout(() => {
                 nextPage();
