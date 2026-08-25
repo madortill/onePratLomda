@@ -28,7 +28,7 @@ function WhatIsPrat1({ changePage, changeSection }) {
       <div className='text-WhatIsPrat1'>
         <p className='boldText title-WhatIsPrat1'>מהו דו"ח 1?</p>
         <p>דו”ח 1 כשמו כן הוא, הראשון בחשיבותו עבור משרד משא”ן סדיר. <br/>
-        הדו”ח מפרט את סטטוס הנכוחות של כל משרתי היחידה בחתך ליחידות משנה, מוזן באמצעות אפליקציית הדו”ח 1 ומערכת אנשים?</p>
+        הדו”ח מפרט את סטטוס הנוכחות של כל משרתי היחידה בחתך ליחידות משנה, מוזן באמצעות אפליקציית הדו”ח 1 ומערכת אנשים</p>
       </div>
       <button className={`textBtn textBtn-WhatIsPrat1 ${canContinue ? "textBtnDisabled" : ""}`} onClick={() => setCanContinue(true)}>למה חשוב ללמוד על דו”ח 1?</button>
       {canContinue && <div className='whyPrat'>

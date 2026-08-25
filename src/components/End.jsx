@@ -12,6 +12,12 @@ function End({ changeSection, fullName }) {
   };
 
   useEffect(() => {
+    if (typeof window.reportComplete === "function") {
+      window.reportComplete();
+    }
+  }, []);
+
+  useEffect(() => {
     const el = nameRef.current;
     if (!el) return;
 
