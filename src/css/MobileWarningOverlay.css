@@ -1,42 +1,295 @@
+.mobile-overlay,
+.mobile-overlay * {
+  box-sizing: border-box;
+}
+
 .mobile-overlay {
-    position: fixed;
-    inset: 0;
-    background: linear-gradient(180deg, #f5edba 0%, #F6E467 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1.5rem;
-    z-index: 9999;
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: grid;
+  place-items: center;
+  overflow-y: auto;
+  padding: 24px;
+  padding:
+    max(24px, env(safe-area-inset-top))
+    max(24px, env(safe-area-inset-right))
+    max(24px, env(safe-area-inset-bottom))
+    max(24px, env(safe-area-inset-left));
+  background:
+    radial-gradient(
+      circle at 20% 15%,
+      rgba(255, 255, 255, 0.65),
+      transparent 45%
+    ),
+    linear-gradient(180deg, #f5edba 0%, #f6e467 100%);
+  font-family: "assistant", sans-serif;
+}
+
+.mobile-overlay-card {
+  width: 100%;
+  max-width: 390px;
+  margin: auto;
+  padding: 28px 22px;
+  color: #fff;
+  background: #111;
+  border: 3px solid #dae6f3;
+  border-radius: 28px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.mobile-overlay-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border: 1px solid rgba(246, 228, 103, 0.35);
+  border-radius: 999px;
+  color: #f6e467;
+  background: rgba(246, 228, 103, 0.08);
+  font-size: 15px;
+}
+
+.mobile-overlay-scene {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 190px;
+  margin: 12px 0;
+  direction: ltr;
+}
+
+.mobile-overlay-device {
+  position: relative;
+  padding: 8px;
+  border: 3px solid #dae6f3;
+  border-radius: 15px;
+  background: #242424;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-overlay-screen {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #f6e467;
+}
+
+.mobile-overlay-face {
+  color: #171717;
+  font-family: sans-serif;
+  font-size: 29px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.mobile-overlay-screen-line {
+  width: 55%;
+  height: 5px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.mobile-overlay-screen-line:last-child {
+  width: 38%;
+}
+
+.mobile-overlay-tablet {
+  width: 100px;
+  height: 138px;
+  animation: mobile-overlay-turn 3.6s ease-in-out infinite;
+}
+
+.mobile-overlay-rotate-arrow {
+  position: absolute;
+  top: 4px;
+  right: 24px;
+  color: #f6e467;
+  font-family: sans-serif;
+  font-size: 54px;
+  line-height: 1;
+}
+
+.mobile-overlay-transfer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  width: 100%;
+}
+
+.mobile-overlay-phone {
+  flex-shrink: 0;
+  width: 56px;
+  height: 96px;
+  padding: 5px;
+  border-radius: 13px;
+  transform: rotate(-8deg);
+}
+
+.mobile-overlay-phone .mobile-overlay-face {
+  font-size: 20px;
+}
+
+.mobile-overlay-transfer-arrow {
+  color: #f6e467;
+  font-family: sans-serif;
+  font-size: 32px;
+  animation: mobile-overlay-transfer-pulse 1.8s ease-in-out infinite;
+}
+
+.mobile-overlay-computer {
+  width: 142px;
+  animation: mobile-overlay-float 3s ease-in-out infinite;
+}
+
+.mobile-overlay-computer .mobile-overlay-device {
+  width: 100%;
+  height: 98px;
+  border-radius: 12px 12px 5px 5px;
+}
+
+.mobile-overlay-computer-base {
+  display: block;
+  width: calc(100% + 14px);
+  height: 10px;
+  margin-left: -7px;
+  background: #dae6f3;
+  border-radius: 2px 2px 12px 12px;
+}
+
+.mobile-overlay-title {
+  margin: 0 0 12px;
+  color: #fff;
+  font-family: "assistant-bold", "assistant", sans-serif;
+  font-size: clamp(25px, 6vw, 31px);
+  line-height: 1.25;
+}
+
+.mobile-overlay-text {
+  margin: 0;
+  color: #e4e4e4;
+  font-size: 19px;
+  line-height: 1.6;
+}
+
+.mobile-overlay-waiting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  margin-top: 24px;
+  color: #f6e467;
+  font-size: 16px;
+}
+
+.mobile-overlay-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #f6e467;
+  animation: mobile-overlay-transfer-pulse 1.8s ease-in-out infinite;
+}
+
+.mobile-overlay-copy-button {
+  width: 100%;
+  min-height: 48px;
+  margin-top: 22px;
+  padding: 12px 16px;
+  border: 0;
+  border-radius: 14px;
+  color: #111;
+  background: #f6e467;
+  font: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 150ms ease, background 150ms ease;
+}
+
+.mobile-overlay-copy-button:active {
+  transform: scale(0.97);
+}
+
+.mobile-overlay-copy-button:focus-visible {
+  outline: 3px solid #dae6f3;
+  outline-offset: 4px;
+}
+
+.mobile-overlay-copy-status {
+  min-height: 42px;
+  margin: 12px 0 0;
+  color: #bbb;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.mobile-overlay-link {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  border: 1px solid #dae6f3;
+  border-radius: 10px;
+  color: #fff;
+  background: #242424;
+  font-size: 16px;
+}
+
+@keyframes mobile-overlay-turn {
+  0%, 15% {
+    transform: rotate(0deg);
   }
-  
+  45%, 75% {
+    transform: rotate(-90deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes mobile-overlay-transfer-pulse {
+  0%, 100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes mobile-overlay-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@media (max-height: 500px) {
   .mobile-overlay-card {
-    width: 100%;
-    max-width: 22rem;
-    background: #000000;
-    color: #ffffff;
-    border-radius: 1.5rem;
-    padding: 2rem 1.5rem;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.18);
-    text-align: center;
-    border: 3px solid #DAE6F3;
+    padding: 18px;
   }
-  
-  .mobile-overlay-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+
+  .mobile-overlay-scene {
+    height: 140px;
+    margin: 4px 0;
   }
-  
-  .mobile-overlay-title {
-    font-family: "assistant-bold";
-    font-size: 1.7rem;
-    line-height: 1.3;
-    margin-bottom: 1rem;
-    color: #ffffff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-overlay *,
+  .mobile-overlay *::before,
+  .mobile-overlay *::after {
+    animation: none !important;
+    transition: none !important;
   }
-  
-  .mobile-overlay-text {
-    font-family: "assistant";
-    font-size: 1.3rem;
-    line-height: 1.7;
-    color: #ffffff;
+
+  .mobile-overlay-tablet {
+    transform: rotate(-90deg);
   }
+}
